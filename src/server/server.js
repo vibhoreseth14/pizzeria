@@ -8,7 +8,7 @@ app.use(bp.urlencoded({extended:true}));
 app.use(bp.json());
 
 const Stripe = require("stripe");
-const stripe = Stripe("sk_test_51Hmy0nA7qu2btGGwaySnLqGjpvH6J6vPuRQtyR4grR2F39LxeZ7FYt6JNAesHfk1aYsLjdzhIn6ET0zvO9U9Lz5t00NhJjDgzj");
+const stripe = Stripe("Please insert your own secret key here");
 
 app.use((req, res,next)=>{
     res.header("Access-Control-Allow-Origin","http://localhost:4200");
