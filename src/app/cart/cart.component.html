@@ -1,0 +1,30 @@
+<section>
+    <div class="container" *ngIf="total!=0">
+        <table class="table  table-responsive">
+            <tbody>
+                <tr *ngFor="let i of cart;index as ind">
+                    <td><img src={{i.image}} alt={{i.name}} style="height:20%" class="left-align"></td>
+                    <td><b>{{i.name}} {{i.price|currency:'INR'}}</b><br>
+                        <b>Ingredients:</b> {{i.ingredients}}                    
+                    </td>
+                    <td>
+                        <button name="clearitem" class="btn btn-danger" (click)="clearcartitem(i.name,ind,i.price)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>  
+        </table>
+        <div *ngIf="total!=0" class="row mt-2 offset-2 text-primary">
+            <b>Total Price : {{total|currency:'INR'}}</b>
+          </div><br><br>
+          <div class="col-3 offset-4">
+              <button name="buy" class="btn btn-success" (click)="order()">Order Now</button>
+              <button name="clear" class="btn btn-warning ml-4" (click)="clearcart()">Clear Cart</button>
+          </div>
+    </div>
+    <div class="container">
+        <div class="alert alert-danger text-center" role="alert" *ngIf="total==0"> 
+            Cart is Empty!<a routerLink="/orderpizza" class="alert-link">Please add items </a> into cart to order... 
+         </div>
+    </div>
+    
+</section>

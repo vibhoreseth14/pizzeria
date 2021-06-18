@@ -1,0 +1,24 @@
+<div  class="container">
+    <div class="row">
+      <div *ngFor="let pizza of pizzas" class="card mx-auto text-center col-md-6 m-3 d-inline-flex">
+          <table class="table table-borderless table-responsive">
+              <tr>
+                  <td >
+                      <h2>{{pizza.name}}</h2>
+                      <div *ngIf="pizza.type=='nonveg'" class="box-danger offset-4"></div>
+                      <div *ngIf="pizza.type=='veg'" class="box-success offset-4"></div><br>
+                      <b class="mt-3">{{pizza.price|currency:'INR'}}</b>
+                  </td>
+                  <td>
+                    <p class="justify-content-start">{{pizza.description}}</p>
+                    <p class="justify-content-start"><b>Ingredients:</b>{{pizza.ingredients}}</p>
+                    <p class="justify-content-start"><b>Toppings:</b>{{pizza.topping}}</p>
+                  </td>
+                  <td class="container">
+                    <img src={{pizza.image}} alt={{pizza.name}} style="size:100%" class="card-img-top right-align">
+                    <button class="btn btn-warning mt-3" (click)="addtocart(pizza)">Add To Cart</button>
+                  </td>
+              </tr>
+          </table>
+    </div>   
+</div>

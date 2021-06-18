@@ -1,0 +1,14 @@
+<section>
+  <br>
+    <div class="container">
+        <div class="text-dark mt-2 mb-2 col-5" >{{name}}</div>
+        <div class="text-dark mt-2 mb-2 col-5" >{{am|currency:'INR'}}</div>
+        <ngx-stripe-card
+          [options]="cardOptions"
+          [elementsOptions]="elementsOptions"
+        ></ngx-stripe-card>
+        <button type="submit" class="btn btn-success mt-2 offset-3" (click)="pay()">
+          PAY
+        </button>
+    </div>
+</section>

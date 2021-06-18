@@ -1,0 +1,29 @@
+<section>
+    <div class="container-sm">
+        <div class="offset-2 mb-2">Pizzeria now gives you the option of building your own pizza.Choose your ingredients from list below.</div>
+        <table class="table table-bordered table-striped offset-3" *ngIf="ingredients" style="width:40vw;">
+            <tbody>
+                <tr *ngFor="let i of ingredients">
+                    <td><img src={{i.image}} alt={{i.tname}} style="height: 6vh;" class=" img-thumbnail left-align"></td>
+                    <td><b>{{i.tname}} {{i.price|currency:'INR'}}</b></td>
+                    <td><label class="text-warning">
+                        <input type="checkbox" [value]="i.tname" [checked]="ch" (change)="($event.target.checked)?checkedtrue(i.price,i.tname):checkedfalse(i.price,i.tname)">
+                         Add
+                        </label>
+                    </td>
+                </tr>
+            </tbody>  
+        </table>
+        <div class="row mt-2 offset-3 text-primary">
+          <b>Total Price : {{total|currency:'INR'}}</b>
+        </div><br>
+        <div class="row mt-2 offset-3 text-primary" *ngIf="customs[0]">
+          <b class="mr-1">Ingredients:</b>
+          <span class="text-primary" *ngFor="let c of customs;index as i">{{customs[i]}},</span>
+        </div><br>
+        <div class="col-3 offset-5">
+            <button name="buildpizza" class="btn btn-dark" style="color:orange;" (click)="buildPizza()">Build Pizza</button>
+        </div>
+    </div>
+</section>
+
