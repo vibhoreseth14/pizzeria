@@ -1,8 +1,13 @@
 # Pizzeria
+
 1)Create a mongo db database as specified in mongodb_database folder.
+
 2)import all npm packages using npm install .
+
 3)Run the app.
+
 4) stripe test credi card :4242424242424242	Visa	Any 3 digits	Any future date
+
 5) 3d secure card number:4000002500003155  .It will open #D secure payment pop up window ,just like we see in our daily life.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
