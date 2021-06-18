@@ -10,6 +10,8 @@
 
 5) 3d secure card number:4000002500003155  .It will open #D secure payment pop up window ,just like we see in our daily life.
 
+6) Also please make sure to update secret key in server.js and production key in app.module.js with your API keys from stripe. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
 ## Development server
